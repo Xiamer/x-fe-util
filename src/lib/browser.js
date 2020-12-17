@@ -2,7 +2,7 @@
 
 
 // https://developer.mozilla.org/zh-CN/docs/Web/API/Document/cookie
-var docCookies = {
+var cookies = {
   getItem: function (sKey) {
     return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(sKey).replace(/[-.+*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
   },
@@ -113,5 +113,5 @@ export function getParameterByName(name, url = window.location.href) {
 export {
   getIEVer,
   getQueryString,
-  docCookies
+  cookies
 };

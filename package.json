@@ -9,7 +9,8 @@
   "scripts": {
     "bulid": "webpack --config ./bulid/webpack.prod.conf.js",
     "dev": "webpack serve --config ./bulid/webpack.dev.conf.js",
-    "dev:start": "webpack serve --config ./webpack.config.js"
+    "docs": "node ./bulid/docs.js",
+    "docs2": "jsdoc2md src/lib/design.js > api.md"
   },
   "author": "xiamer",
   "license": "ISC",

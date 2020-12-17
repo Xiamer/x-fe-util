@@ -71,9 +71,10 @@ function throttle(fn, wait, options = {}) {
 }
 
 /***
- * @param {string | number} 千分位
- *
- * @description 123456.23 -> 123,456.23
+ * 千分位 123456.23 -> 123,456.23
+ * @param {string | number} 数字
+ * 
+ * @returns {String} 千分位
  *
  * https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
  */
@@ -85,9 +86,10 @@ const numWithCommas = (x) => {
 
 
 /**
- * 获取指定的key的值
+ * 取值器 获取指定的key的值
  * @param {Object} data 对象
  * @param {String} keys a.b.c
+ * @returns {any} 取值器得到的值
  */
 const getValueWithKey = (obj, keys) => {
   return keys.split('.').reduce((pre, cur) => {
