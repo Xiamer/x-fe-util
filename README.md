@@ -22,6 +22,9 @@
 用一句话总结防抖和节流的区别：防抖是将多次执行变为最后一次执行，节流是将多次执行变为每隔一段时间执行
 实现函数节流我们主要有两种方法：时间戳和定时器</p>
 </dd>
+<dt><a href="#numWithCommas">numWithCommas(数字)</a> ⇒ <code>String</code></dt>
+<dd><p>千分位</p>
+</dd>
 <dt><a href="#getValueWithKey">getValueWithKey(data, keys)</a> ⇒ <code>any</code></dt>
 <dd><p>取值器 获取指定的key的值</p>
 </dd>
@@ -124,6 +127,25 @@
 | wait | <code>Number</code> | 间隔时间 |
 | options | <code>Object</code> | 立即执行 options中 leading：false 表示禁用第一次执行 trailing: false 表示禁用停止触发的回调 |
 
+<a name="numWithCommas"></a>
+
+## numWithCommas(数字) ⇒ <code>String</code>
+千分位
+
+**Kind**: global function  
+**Returns**: <code>String</code> - 千分位
+
+https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript  
+
+| Param | Type |
+| --- | --- |
+| 数字 | <code>string</code> \| <code>number</code> | 
+
+**Example**  
+```js
+// returns 123,456.23
+numWithCommas(123456.23) -> 123,456.23
+```
 <a name="getValueWithKey"></a>
 
 ## getValueWithKey(data, keys) ⇒ <code>any</code>

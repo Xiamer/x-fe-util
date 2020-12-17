@@ -2,11 +2,11 @@
  * @Author: xiaoguang_10@qq.com
  * @LastEditors: xiaoguang_10@qq.com
  * @Date: 2020-12-16 17:19:15
- * @LastEditTime: 2020-12-17 16:39:19
+ * @LastEditTime: 2020-12-17 17:55:04
  */
-// 发布、订阅
 /**
  * 发布、订阅模式
+ * 
  */
 class EventEmitter {
   constructor() {

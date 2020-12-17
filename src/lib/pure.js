@@ -70,8 +70,11 @@ function throttle(fn, wait, options = {}) {
   return throttled;
 }
 
-/***
- * 千分位 123456.23 -> 123,456.23
+/**
+ * 千分位 
+ * @example 
+ * // returns 123,456.23
+ * numWithCommas(123456.23) -> 123,456.23
  * @param {string | number} 数字
  * 
  * @returns {String} 千分位
