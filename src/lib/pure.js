@@ -4,12 +4,16 @@
  * 当持续触发事件时，一定时间段内没有再触发事件，事件处理函数才会执行一次，
  * 如果设定时间到来之前，又触发了事件，就重新开始延时。也就是说当一个用户一直触发这个函数，
  * 且每次触发函数的间隔小于既定时间，那么防抖的情况下只会执行一次。
+ * @example 
+ * function a () {console.log(1)}
+ * const fn = debounce(a, 2000, false)
+ * // 2s后 打印1
+ * fn()
  *
  * @param {Function} fn 执行函数
  * @param {Number} wait 间隔时间 ms
  * @param {Boolean} immediate 立即执行
  */
-
 function debounce(fn, wait, immediate) {
   let timer;
   return function () {
@@ -38,11 +42,17 @@ function debounce(fn, wait, immediate) {
  * 小于既定值，函数节流会每隔这个时间调用一次
  * 用一句话总结防抖和节流的区别：防抖是将多次执行变为最后一次执行，节流是将多次执行变为每隔一段时间执行
  * 实现函数节流我们主要有两种方法：时间戳和定时器
+ * 
+ * @example 
+ * function a () {console.log(1)}
+ * const fn = throttle(a, 2000)
+ * // 2s内只会执行一次
+ * object.addEventListener("scroll", fn);
  *
  * @param {Function} fn 执行函数
  * @param {Number} wait 间隔时间
  * @param {Object} options 立即执行
- * options中 leading：false 表示禁用第一次执行 trailing: false 表示禁用停止触发的回调
+ * @param {Object} options.leading false 表示禁用停止触发的回调
  */
 function throttle(fn, wait, options = {}) {
   let timer;
@@ -75,11 +85,11 @@ function throttle(fn, wait, options = {}) {
  * @example 
  * // returns 123,456.23
  * numWithCommas(123456.23) -> 123,456.23
- * @param {string | number} 数字
  * 
+ * @param {string | number} 数字
  * @returns {String} 千分位
- *
- * https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
+ * 
+ * @ignore https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
  */
 const numWithCommas = (x) => {
   if (x === '-') return '-'
@@ -90,8 +100,14 @@ const numWithCommas = (x) => {
 
 /**
  * 取值器 获取指定的key的值
+ * @example
+ * const a = {a:{ b: 1}}
+ * // returns 1
+ * getValueWithKey(a, 'a.b')
+ * // returns {b: 1}
+ * getValueWithKey(a, 'a')
  * @param {Object} data 对象
- * @param {String} keys a.b.c
+ * @param {String} keys b.c
  * @returns {any} 取值器得到的值
  */
 const getValueWithKey = (obj, keys) => {
@@ -103,25 +119,39 @@ const getValueWithKey = (obj, keys) => {
 
 /**
  * url 解析
- * https://stackoverflow.com/questions/1420881/how-to-extract-base-url-from-a-string-in-javascript
- *
- * @param {String} url url
- *
+ * {@link https://stackoverflow.com/questions/1420881/how-to-extract-base-url-from-a-string-in-javascript 参考地址}.
+ * // returns 
+ * {
+ *   hash: "#2"
+ *   host: "www.baidu.com"
+ *   hostname: "www.baidu.com"
+ *   origin: "https://www.baidu.com"
+ *   pathname: "/abc/def"
+ *   port: ""
+ *   protocol: "https:"
+ *   query: {q: "1", a: "2"}
+ *   search: "?q=1&a=2"
+ *  }
+ * parseUrl('https://www.baidu.com/abc/def?q=1&a=2#2')
+ * 
+ * @param {String} url url 或者 fullpath
  * @returns {Object}
- *
+ * 
  */
 const parseUrl = (url) => {
-  if (typeof URL === 'function') {
-    const m = new URL(url)
-    const { host, hostname, pathname, port, protocol, search, hash } = m;
-    return { origin, host, hostname, pathname, port, protocol, search, hash }
-  } else {
-    const a = document.createElement('a');
-    a.setAttribute('href', url);
-    const { host, hostname, pathname, port, protocol, search, hash } = a;
-    const origin = `${protocol}//${hostname}${port.length ? `:${port}` : ''}`
-    return { origin, host, hostname, pathname, port, protocol, search, hash }
+  const a = document.createElement('a');
+  a.setAttribute('href', url);
+  const { host, hostname, pathname, port, protocol, search, hash } = a;
+  const origin = `${protocol}//${hostname}${port.length ? `:${port}` : ''}`;
+  let query = {}
+  if (search) {
+    try {
+      query = JSON.parse('{"' + decodeURI(search.substring(1)).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}')
+    } catch (error) {
+      console.error('query 解析 异常', error)
+    }
   }
+  return { origin, host, hostname, pathname, port, protocol, search, hash, query}
 }
 
 
