@@ -66,6 +66,9 @@
 ## Functions
 
 <dl>
+<dt><a href="#getIdCardInfo">getIdCardInfo(id)</a> ⇒ <code><a href="#oIdCardInfo">oIdCardInfo</a></code></dt>
+<dd><p>获取身份证号对应的性别生日年龄等信息</p>
+</dd>
 <dt><a href="#debounce">debounce(fn, wait, immediate)</a></dt>
 <dd><p>防抖函数(可用于防止重复提交)
 当持续触发事件时，一定时间段内没有再触发事件，事件处理函数才会执行一次，
@@ -84,8 +87,12 @@
 ## Typedefs
 
 <dl>
+<dt><a href="#oIdCardInfo">oIdCardInfo</a> : <code>object</code></dt>
+<dd><p>身份证对应的性别生日年龄等相关信息</p>
+</dd>
 <dt><a href="#oParseUrl">oParseUrl</a> : <code>object</code></dt>
-<dd></dd>
+<dd><p>url转化为对象的信息</p>
+</dd>
 </dl>
 
 <a name="EventEmitter"></a>
@@ -454,11 +461,26 @@ validChineseName('马云')
 ```js
 // returns true
 validPwd('qwe123.')
-```
-**Example**  
-```js
 // returns false
 validPwd('qwe123456')
+```
+<a name="getIdCardInfo"></a>
+
+## getIdCardInfo(id) ⇒ [<code>oIdCardInfo</code>](#oIdCardInfo)
+获取身份证号对应的性别生日年龄等信息
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| id | <code>string</code> | 身份证号 |
+
+**Example**  
+```js
+// {gender: "M", birthday: "2002-01-01", age: 18}
+getIdCardInfo('12010420020101253x')
+// {}
+getIdCardInfo('000')
 ```
 <a name="debounce"></a>
 
@@ -508,9 +530,25 @@ const fn = throttle(a, 2000)
 // 2s内只会执行一次
 object.addEventListener("scroll", fn);
 ```
+<a name="oIdCardInfo"></a>
+
+## oIdCardInfo : <code>object</code>
+身份证对应的性别生日年龄等相关信息
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| gender | <code>string</code> | 性别(man:M, female: F) |
+| birthday | <code>string</code> | 生日(yyyy-mm-dd) |
+| age | <code>number</code> | 年龄 |
+
 <a name="oParseUrl"></a>
 
 ## oParseUrl : <code>object</code>
+url转化为对象的信息
+
 **Kind**: global typedef  
 **Properties**
 

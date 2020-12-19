@@ -2,7 +2,7 @@
  * @Author: xiaoguang_10@qq.com
  * @LastEditors: xiaoguang_10@qq.com
  * @Date: 2020-12-16 17:18:32
- * @LastEditTime: 2020-12-20 01:36:48
+ * @LastEditTime: 2020-12-20 02:10:19
  */
 const fs = require('fs')
 const jsdoc2md = require('jsdoc-to-markdown')
@@ -10,6 +10,7 @@ const jsdoc2md = require('jsdoc-to-markdown')
 jsdoc2md.render({ 
   files: [
   'src/lib/browser.js',
+  'src/lib/id-card/index.js',
   'src/lib/design.js',
   'src/lib/dom.js',
   'src/lib/pure.js',

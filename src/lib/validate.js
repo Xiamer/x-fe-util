@@ -65,7 +65,6 @@ export const validChineseName = (name, length = 16) => {
  * @example 
  * // returns true
  * validPwd('qwe123.')
- * @example 
  * // returns false
  * validPwd('qwe123456')
  *

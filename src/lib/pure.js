@@ -121,8 +121,7 @@ export const getValueWithKey = (obj, keys) => {
 }
 
 /**
- * 
- * @typedef {object} oParseUrl
+ * @typedef {object} oParseUrl url转化为对象的信息
  * @property {string} protocol protocol
  * @property {string} host host
  * @property {string} hostname hostname
