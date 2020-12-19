@@ -2,7 +2,7 @@
  * @Author: xiaoguang_10@qq.com
  * @LastEditors: xiaoguang_10@qq.com
  * @Date: 2020-11-24 14:48:09
- * @LastEditTime: 2020-12-20 02:20:20
+ * @LastEditTime: 2020-12-20 02:21:33
  */
 
 import util from './util'
@@ -17,9 +17,9 @@ import util from './util'
  * @description 获取身份证号对应的性别生日年龄等信息
  * 
  * @example
- * // {gender: "M", birthday: "2002-01-01", age: 18}
+ * // returns {gender: "M", birthday: "2002-01-01", age: 18}
  * getIdCardInfo('12010420020101253x')
- * // {}
+ * // returns {}
  * getIdCardInfo('000')
  *
  * @param {string} id 身份证号
