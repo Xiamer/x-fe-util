@@ -11,8 +11,8 @@
  * fn()
  *
  * @param {Function} fn 执行函数
- * @param {Number} wait 间隔时间 ms
- * @param {Boolean} immediate 立即执行
+ * @param {number} wait 间隔时间 ms
+ * @param {boolean} immediate 立即执行
  */
 function debounce(fn, wait, immediate) {
   let timer;
@@ -50,9 +50,9 @@ function debounce(fn, wait, immediate) {
  * object.addEventListener("scroll", fn);
  *
  * @param {Function} fn 执行函数
- * @param {Number} wait 间隔时间
- * @param {Object} options 立即执行
- * @param {Object} options.leading false 表示禁用停止触发的回调
+ * @param {number} wait 间隔时间
+ * @param {object} options 立即执行
+ * @param {object} options.leading false 表示禁用停止触发的回调
  */
 function throttle(fn, wait, options = {}) {
   let timer;
@@ -82,14 +82,14 @@ function throttle(fn, wait, options = {}) {
 
 /**
  * 千分位 
- * {@link https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript 参考地址}.
+ * {@link https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript 参考地址}
  * 
  * @example 
  * // returns 123,456.23
- * numWithCommas(123456.23) -> 123,456.23
+ * numWithCommas(123456.23)
  * 
  * @param {string | number} 数字
- * @returns {String} 千分位
+ * @returns {string} 千分位
  * 
  */
 const numWithCommas = (x) => {
@@ -109,8 +109,8 @@ const numWithCommas = (x) => {
  * // returns {b: 1}
  * getValueWithKey(a, 'a')
  * 
- * @param {Object} data 对象
- * @param {String} keys b.c
+ * @param {object} data 对象
+ * @param {string} keys b.c
  * @returns {any} 取值器得到的值
  */
 const getValueWithKey = (obj, keys) => {
@@ -122,15 +122,15 @@ const getValueWithKey = (obj, keys) => {
 
 /**
  * 
- * @typedef {Object} oParseUrl
- * @property {String} protocol protocol
- * @property {String} host host
- * @property {String} hostname hostname
- * @property {String} origin origin
- * @property {String} pathname pathname
- * @property {String} port port
- * @property {String} search search
- * @property {Object} query query
+ * @typedef {object} oParseUrl
+ * @property {string} protocol protocol
+ * @property {string} host host
+ * @property {string} hostname hostname
+ * @property {string} origin origin
+ * @property {string} pathname pathname
+ * @property {string} port port
+ * @property {string} search search
+ * @property {object} query query
  */
 /**
  * url 解析
@@ -151,7 +151,7 @@ const getValueWithKey = (obj, keys) => {
  *  }
  * parseUrl('https://www.baidu.com/abc/def?q=1&a=2#2')
  * 
- * @param {String} url url 或者 fullpath
+ * @param {string} url url 或者 fullpath
  * 
  * @returns {oParseUrl} 
  * 

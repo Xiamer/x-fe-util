@@ -1,10 +1,17 @@
+/*
+ * @Author: xiaoguang_10@qq.com
+ * @LastEditors: xiaoguang_10@qq.com
+ * @Date: 2020-12-16 17:19:15
+ * @LastEditTime: 2020-12-20 01:01:47
+ */
 /**
  * 动态创建iframe
  *
- * @param {String} id     iframe id
- * @param {string} url
- * @param {String} style
- * @returns  iframe
+ * @param {string} id  iframe id
+ * @param {string} url iframe 地址
+ * @param {string} style iframe 样式
+ * 
+ * @returns {HTMLElement} iframe 创建的iframe dom元素
  */
 export function createIframe(id, url, style) {
   var iframe = document.createElement("iframe");
@@ -16,28 +23,32 @@ export function createIframe(id, url, style) {
 
 
 /**
- * Check if an element has a class
- * @param {HTMLElement} elm
- * @param {string} cls
- * @returns {boolean}
+ * dom元素是否包含该class
+ * 
+ * @param {HTMLElement} ele  元素
+ * @param {string} cls class名称
+ * 
+ * @returns {boolean} 是否包含该class
  */
 export function hasClass(ele, cls) {
   return !!ele.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'))
 }
 
 /**
- * Add class to element
- * @param {HTMLElement} elm
- * @param {string} cls
+ * 元素添加class
+ * 
+ * @param {HTMLElement} ele dom元素
+ * @param {string} cls 添加的class名称
  */
 export function addClass(ele, cls) {
   if (!hasClass(ele, cls)) ele.className += ' ' + cls
 }
 
 /**
- * Remove class from element
- * @param {HTMLElement} elm
- * @param {string} cls
+ * 元素删除class
+ * 
+ * @param {HTMLElement} ele dom元素
+ * @param {string} cls 删除的class名称
  */
 export function removeClass(ele, cls) {
   if (hasClass(ele, cls)) {

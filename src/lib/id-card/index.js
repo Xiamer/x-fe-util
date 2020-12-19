@@ -10,11 +10,11 @@ import util from './util'
 /**
  * @description 获取身份证信息
  *
- * @param {String} id 身份证号
- * @returns {Object} info - 身份证信息
- * @returns {String} info.gender - 性别(man:M, female: F)
- * @returns {String} info.birthday - 生日(yyyy-mm-dd)
- * @returns {Number} info.age - 年龄(yyyy-mm-dd)
+ * @param {string} id 身份证号
+ * @returns {object} info - 身份证信息
+ * @returns {string} info.gender - 性别(man:M, female: F)
+ * @returns {string} info.birthday - 生日(yyyy-mm-dd)
+ * @returns {number} info.age - 年龄(yyyy-mm-dd)
  *
  */
 const getIdCardInfo =(id)=> {
