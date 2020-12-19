@@ -92,7 +92,7 @@ export function throttle(fn, wait, options = {}) {
  * @returns {string} 千分位
  * 
  */
-const numWithCommas = (x) => {
+export const numWithCommas = (x) => {
   if (x === '-') return '-'
   if (!x) return 0
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");

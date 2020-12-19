@@ -37,6 +37,10 @@
 <dt><a href="#removeClass">removeClass</a></dt>
 <dd><p>元素删除class</p>
 </dd>
+<dt><a href="#numWithCommas">numWithCommas</a> ⇒ <code>string</code></dt>
+<dd><p>千分位 
+<a href="https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript">参考地址</a></p>
+</dd>
 <dt><a href="#getValueWithKey">getValueWithKey</a> ⇒ <code>any</code></dt>
 <dd><p>取值器 获取指定的key的值</p>
 </dd>
@@ -74,10 +78,6 @@
 小于既定值，函数节流会每隔这个时间调用一次
 用一句话总结防抖和节流的区别：防抖是将多次执行变为最后一次执行，节流是将多次执行变为每隔一段时间执行
 实现函数节流我们主要有两种方法：时间戳和定时器</p>
-</dd>
-<dt><a href="#numWithCommas">numWithCommas(数字)</a> ⇒ <code>string</code></dt>
-<dd><p>千分位 
-<a href="https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript">参考地址</a></p>
 </dd>
 </dl>
 
@@ -316,6 +316,24 @@ dom元素是否包含该class
 | ele | <code>HTMLElement</code> | dom元素 |
 | cls | <code>string</code> | 删除的class名称 |
 
+<a name="numWithCommas"></a>
+
+## numWithCommas ⇒ <code>string</code>
+千分位 
+[参考地址](https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript)
+
+**Kind**: global constant  
+**Returns**: <code>string</code> - 千分位  
+
+| Param | Type |
+| --- | --- |
+| 数字 | <code>string</code> \| <code>number</code> | 
+
+**Example**  
+```js
+// returns 123,456.23
+numWithCommas(123456.23)
+```
 <a name="getValueWithKey"></a>
 
 ## getValueWithKey ⇒ <code>any</code>
@@ -489,24 +507,6 @@ function a () {console.log(1)}
 const fn = throttle(a, 2000)
 // 2s内只会执行一次
 object.addEventListener("scroll", fn);
-```
-<a name="numWithCommas"></a>
-
-## numWithCommas(数字) ⇒ <code>string</code>
-千分位 
-[参考地址](https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript)
-
-**Kind**: global function  
-**Returns**: <code>string</code> - 千分位  
-
-| Param | Type |
-| --- | --- |
-| 数字 | <code>string</code> \| <code>number</code> | 
-
-**Example**  
-```js
-// returns 123,456.23
-numWithCommas(123456.23)
 ```
 <a name="oParseUrl"></a>
 
