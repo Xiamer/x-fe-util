@@ -29,10 +29,17 @@
 <dt><a href="#getValueWithKey">getValueWithKey(data, keys)</a> ⇒ <code>any</code></dt>
 <dd><p>取值器 获取指定的key的值</p>
 </dd>
-<dt><a href="#parseUrl">parseUrl(url)</a> ⇒ <code>Object</code> | <code>String</code> | <code>String</code> | <code>String</code> | <code>String</code> | <code>String</code> | <code>String</code> | <code>Object</code> | <code>Object</code></dt>
+<dt><a href="#parseUrl">parseUrl(url)</a> ⇒ <code><a href="#oParseUrl">oParseUrl</a></code></dt>
 <dd><p>url 解析
 <a href="https://stackoverflow.com/questions/1420881/how-to-extract-base-url-from-a-string-in-javascript">参考地址</a></p>
 </dd>
+</dl>
+
+## Typedefs
+
+<dl>
+<dt><a href="#oParseUrl">oParseUrl</a> : <code>Object</code></dt>
+<dd></dd>
 </dl>
 
 <a name="EventEmitter"></a>
@@ -184,12 +191,11 @@ getValueWithKey(a, 'a')
 ```
 <a name="parseUrl"></a>
 
-## parseUrl(url) ⇒ <code>Object</code> \| <code>String</code> \| <code>String</code> \| <code>String</code> \| <code>String</code> \| <code>String</code> \| <code>String</code> \| <code>Object</code> \| <code>Object</code>
+## parseUrl(url) ⇒ [<code>oParseUrl</code>](#oParseUrl)
 url 解析
 [参考地址](https://stackoverflow.com/questions/1420881/how-to-extract-base-url-from-a-string-in-javascript)
 
 **Kind**: global function  
-**Returns**: <code>Object</code> - oParseUrl<code>String</code> - oParseUrl.protocol protocol<code>String</code> - oParseUrl.host host<code>String</code> - oParseUrl.hostname hostname<code>String</code> - oParseUrl.origin origin<code>String</code> - oParseUrl.pathname pathname<code>String</code> - oParseUrl.port port<code>Object</code> - oParseUrl.search search<code>Object</code> - oParseUrl.query query  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -211,3 +217,20 @@ url 解析
  }
 parseUrl('https://www.baidu.com/abc/def?q=1&a=2#2')
 ```
+<a name="oParseUrl"></a>
+
+## oParseUrl : <code>Object</code>
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| protocol | <code>String</code> | protocol |
+| host | <code>String</code> | host |
+| hostname | <code>String</code> | hostname |
+| origin | <code>String</code> | origin |
+| pathname | <code>String</code> | pathname |
+| port | <code>String</code> | port |
+| search | <code>String</code> | search |
+| query | <code>Object</code> | query |
+

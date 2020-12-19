@@ -121,6 +121,18 @@ const getValueWithKey = (obj, keys) => {
 }
 
 /**
+ * 
+ * @typedef {Object} oParseUrl
+ * @property {String} protocol protocol
+ * @property {String} host host
+ * @property {String} hostname hostname
+ * @property {String} origin origin
+ * @property {String} pathname pathname
+ * @property {String} port port
+ * @property {String} search search
+ * @property {Object} query query
+ */
+/**
  * url 解析
  * {@link https://stackoverflow.com/questions/1420881/how-to-extract-base-url-from-a-string-in-javascript 参考地址}
  * 
@@ -140,15 +152,8 @@ const getValueWithKey = (obj, keys) => {
  * parseUrl('https://www.baidu.com/abc/def?q=1&a=2#2')
  * 
  * @param {String} url url 或者 fullpath
- * @returns {Object} oParseUrl
- * @returns {String} oParseUrl.protocol protocol
- * @returns {String} oParseUrl.host host
- * @returns {String} oParseUrl.hostname hostname
- * @returns {String} oParseUrl.origin origin
- * @returns {String} oParseUrl.pathname pathname
- * @returns {String} oParseUrl.port port
- * @returns {Object} oParseUrl.search search
- * @returns {Object} oParseUrl.query query
+ * 
+ * @returns {oParseUrl} 
  * 
  */
 const parseUrl = (url) => {
