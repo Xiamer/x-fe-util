@@ -1,6 +1,6 @@
 {
   "name": "x-fe-util",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "fe util",
   "main": "./dist/index.min.js",
   "directories": {
