@@ -14,7 +14,7 @@
  * @param {number} wait 间隔时间 ms
  * @param {boolean} immediate 立即执行
  */
-function debounce(fn, wait, immediate) {
+export function debounce(fn, wait, immediate) {
   let timer;
   return function () {
     if (timer) clearTimeout(timer);
@@ -54,7 +54,7 @@ function debounce(fn, wait, immediate) {
  * @param {object} options 立即执行
  * @param {object} options.leading false 表示禁用停止触发的回调
  */
-function throttle(fn, wait, options = {}) {
+export function throttle(fn, wait, options = {}) {
   let timer;
   let previous = 0;
   let throttled = function () {
@@ -113,7 +113,7 @@ const numWithCommas = (x) => {
  * @param {string} keys b.c
  * @returns {any} 取值器得到的值
  */
-const getValueWithKey = (obj, keys) => {
+export const getValueWithKey = (obj, keys) => {
   return keys.split('.').reduce((pre, cur) => {
     if (!(pre instanceof Object) && cur) return undefined
     if (pre[cur]) return pre[cur]
@@ -156,7 +156,7 @@ const getValueWithKey = (obj, keys) => {
  * @returns {oParseUrl} 
  * 
  */
-const parseUrl = (url) => {
+export const parseUrl = (url) => {
   const a = document.createElement('a');
   a.setAttribute('href', url);
   const { host, hostname, pathname, port, protocol, search, hash } = a;
@@ -170,14 +170,4 @@ const parseUrl = (url) => {
     }
   }
   return { origin, host, hostname, pathname, port, protocol, search, hash, query}
-}
-
-
-
-export {
-  debounce,
-  throttle,
-  numWithCommas,
-  getValueWithKey,
-  parseUrl
 }

@@ -2,7 +2,7 @@
  * @Author: xiaoguang_10@qq.com
  * @LastEditors: xiaoguang_10@qq.com
  * @Date: 2020-12-16 17:19:15
- * @LastEditTime: 2020-12-20 01:01:47
+ * @LastEditTime: 2020-12-20 02:03:44
  */
 /**
  * 动态创建iframe
@@ -13,7 +13,7 @@
  * 
  * @returns {HTMLElement} iframe 创建的iframe dom元素
  */
-export function createIframe(id, url, style) {
+export const createIframe = (id, url, style) => {
   var iframe = document.createElement("iframe");
   iframe.id = id;
   iframe.style = style;
@@ -30,7 +30,7 @@ export function createIframe(id, url, style) {
  * 
  * @returns {boolean} 是否包含该class
  */
-export function hasClass(ele, cls) {
+export const hasClass = (ele, cls) => {
   return !!ele.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'))
 }
 
@@ -40,7 +40,7 @@ export function hasClass(ele, cls) {
  * @param {HTMLElement} ele dom元素
  * @param {string} cls 添加的class名称
  */
-export function addClass(ele, cls) {
+export const addClass = (ele, cls) => {
   if (!hasClass(ele, cls)) ele.className += ' ' + cls
 }
 
@@ -50,7 +50,7 @@ export function addClass(ele, cls) {
  * @param {HTMLElement} ele dom元素
  * @param {string} cls 删除的class名称
  */
-export function removeClass(ele, cls) {
+export const removeClass = (ele, cls) => {
   if (hasClass(ele, cls)) {
     const reg = new RegExp('(\\s|^)' + cls + '(\\s|$)')
     ele.className = ele.className.replace(reg, ' ')

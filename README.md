@@ -18,34 +18,50 @@
 ## Constants
 
 <dl>
+<dt><a href="#getIEVer">getIEVer</a> ⇒ <code>number</code> | <code>string</code></dt>
+<dd><p>获取ie版本号</p>
+</dd>
+<dt><a href="#getParameterByName">getParameterByName</a> ⇒ <code>string</code> | <code>null</code></dt>
+<dd><p>获取url query key 对应的值，默认url为当localtion.href
+<a href="https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript">参考地址</a></p>
+</dd>
+<dt><a href="#createIframe">createIframe</a> ⇒ <code>HTMLElement</code></dt>
+<dd><p>动态创建iframe</p>
+</dd>
+<dt><a href="#hasClass">hasClass</a> ⇒ <code>boolean</code></dt>
+<dd><p>dom元素是否包含该class</p>
+</dd>
+<dt><a href="#addClass">addClass</a></dt>
+<dd><p>元素添加class</p>
+</dd>
+<dt><a href="#removeClass">removeClass</a></dt>
+<dd><p>元素删除class</p>
+</dd>
+<dt><a href="#getValueWithKey">getValueWithKey</a> ⇒ <code>any</code></dt>
+<dd><p>取值器 获取指定的key的值</p>
+</dd>
+<dt><a href="#parseUrl">parseUrl</a> ⇒ <code><a href="#oParseUrl">oParseUrl</a></code></dt>
+<dd><p>url 解析
+<a href="https://stackoverflow.com/questions/1420881/how-to-extract-base-url-from-a-string-in-javascript">参考地址</a></p>
+</dd>
 <dt><a href="#validateEmail">validateEmail</a> ⇒ <code>boolean</code></dt>
 <dd><p>校验邮箱
 <a href="https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript">参考地址</a></p>
+</dd>
+<dt><a href="#validMobile">validMobile</a> ⇒ <code>boolean</code></dt>
+<dd><p>校验手机号</p>
+</dd>
+<dt><a href="#validChineseName">validChineseName</a> ⇒ <code>boolean</code></dt>
+<dd><p>校验中文名字</p>
+</dd>
+<dt><a href="#validPwd">validPwd</a> ⇒ <code>boolean</code></dt>
+<dd><p>密码复杂性 校验 6-18位，大小写字母、数字和符号 至少三种</p>
 </dd>
 </dl>
 
 ## Functions
 
 <dl>
-<dt><a href="#getIEVer">getIEVer()</a> ⇒ <code>number</code> | <code>string</code></dt>
-<dd><p>获取ie版本号</p>
-</dd>
-<dt><a href="#getParameterByName">getParameterByName(name, url)</a> ⇒ <code>string</code> | <code>null</code></dt>
-<dd><p>获取url query key 对应的值，默认url为当localtion.href
-<a href="https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript">参考地址</a></p>
-</dd>
-<dt><a href="#createIframe">createIframe(id, url, style)</a> ⇒ <code>HTMLElement</code></dt>
-<dd><p>动态创建iframe</p>
-</dd>
-<dt><a href="#hasClass">hasClass(ele, cls)</a> ⇒ <code>boolean</code></dt>
-<dd><p>dom元素是否包含该class</p>
-</dd>
-<dt><a href="#addClass">addClass(ele, cls)</a></dt>
-<dd><p>元素添加class</p>
-</dd>
-<dt><a href="#removeClass">removeClass(ele, cls)</a></dt>
-<dd><p>元素删除class</p>
-</dd>
 <dt><a href="#debounce">debounce(fn, wait, immediate)</a></dt>
 <dd><p>防抖函数(可用于防止重复提交)
 当持续触发事件时，一定时间段内没有再触发事件，事件处理函数才会执行一次，
@@ -62,22 +78,6 @@
 <dt><a href="#numWithCommas">numWithCommas(数字)</a> ⇒ <code>string</code></dt>
 <dd><p>千分位 
 <a href="https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript">参考地址</a></p>
-</dd>
-<dt><a href="#getValueWithKey">getValueWithKey(data, keys)</a> ⇒ <code>any</code></dt>
-<dd><p>取值器 获取指定的key的值</p>
-</dd>
-<dt><a href="#parseUrl">parseUrl(url)</a> ⇒ <code><a href="#oParseUrl">oParseUrl</a></code></dt>
-<dd><p>url 解析
-<a href="https://stackoverflow.com/questions/1420881/how-to-extract-base-url-from-a-string-in-javascript">参考地址</a></p>
-</dd>
-<dt><a href="#validMobile">validMobile(phone)</a> ⇒ <code>boolean</code></dt>
-<dd><p>校验手机号</p>
-</dd>
-<dt><a href="#validChineseName">validChineseName(name, length)</a> ⇒ <code>boolean</code></dt>
-<dd><p>校验中文名字</p>
-</dd>
-<dt><a href="#validPwd">validPwd(pwd)</a> ⇒ <code>boolean</code></dt>
-<dd><p>密码复杂性 校验 6-18位，大小写字母、数字和符号 至少三种</p>
 </dd>
 </dl>
 
@@ -223,30 +223,12 @@ cookie 相关操作
 
 **Kind**: static method of [<code>cookies</code>](#cookies)  
 **Returns**: <code>array</code> - key的数组  
-<a name="validateEmail"></a>
-
-## validateEmail ⇒ <code>boolean</code>
-校验邮箱
-[参考地址](https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript)
-
-**Kind**: global constant  
-**Returns**: <code>boolean</code> - 是否为邮箱  
-
-| Param | Type |
-| --- | --- |
-| email | <code>string</code> | 
-
-**Example**  
-```js
-// returns true
-validateEmail('xiaoguang_10@qq.com')
-```
 <a name="getIEVer"></a>
 
-## getIEVer() ⇒ <code>number</code> \| <code>string</code>
+## getIEVer ⇒ <code>number</code> \| <code>string</code>
 获取ie版本号
 
-**Kind**: global function  
+**Kind**: global constant  
 **Returns**: <code>number</code> \| <code>string</code> - ie版本信息 若不是ie，返回-1  
 **Example**  
 ```js
@@ -259,11 +241,11 @@ getIEVer()
 ```
 <a name="getParameterByName"></a>
 
-## getParameterByName(name, url) ⇒ <code>string</code> \| <code>null</code>
+## getParameterByName ⇒ <code>string</code> \| <code>null</code>
 获取url query key 对应的值，默认url为当localtion.href
 [参考地址](https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript)
 
-**Kind**: global function  
+**Kind**: global constant  
 **Returns**: <code>string</code> \| <code>null</code> - 返回对应的key，若无返回null  
 
 | Param | Type | Description |
@@ -285,10 +267,10 @@ getParameterByName('qux', queryStr);
 ```
 <a name="createIframe"></a>
 
-## createIframe(id, url, style) ⇒ <code>HTMLElement</code>
+## createIframe ⇒ <code>HTMLElement</code>
 动态创建iframe
 
-**Kind**: global function  
+**Kind**: global constant  
 **Returns**: <code>HTMLElement</code> - iframe 创建的iframe dom元素  
 
 | Param | Type | Description |
@@ -299,10 +281,10 @@ getParameterByName('qux', queryStr);
 
 <a name="hasClass"></a>
 
-## hasClass(ele, cls) ⇒ <code>boolean</code>
+## hasClass ⇒ <code>boolean</code>
 dom元素是否包含该class
 
-**Kind**: global function  
+**Kind**: global constant  
 **Returns**: <code>boolean</code> - 是否包含该class  
 
 | Param | Type | Description |
@@ -312,10 +294,10 @@ dom元素是否包含该class
 
 <a name="addClass"></a>
 
-## addClass(ele, cls)
+## addClass
 元素添加class
 
-**Kind**: global function  
+**Kind**: global constant  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -324,16 +306,142 @@ dom元素是否包含该class
 
 <a name="removeClass"></a>
 
-## removeClass(ele, cls)
+## removeClass
 元素删除class
 
-**Kind**: global function  
+**Kind**: global constant  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | ele | <code>HTMLElement</code> | dom元素 |
 | cls | <code>string</code> | 删除的class名称 |
 
+<a name="getValueWithKey"></a>
+
+## getValueWithKey ⇒ <code>any</code>
+取值器 获取指定的key的值
+
+**Kind**: global constant  
+**Returns**: <code>any</code> - 取值器得到的值  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| data | <code>object</code> | 对象 |
+| keys | <code>string</code> | b.c |
+
+**Example**  
+```js
+const a = {a:{ b: 1}}
+// returns 1
+getValueWithKey(a, 'a.b')
+// returns {b: 1}
+getValueWithKey(a, 'a')
+```
+<a name="parseUrl"></a>
+
+## parseUrl ⇒ [<code>oParseUrl</code>](#oParseUrl)
+url 解析
+[参考地址](https://stackoverflow.com/questions/1420881/how-to-extract-base-url-from-a-string-in-javascript)
+
+**Kind**: global constant  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| url | <code>string</code> | url 或者 fullpath |
+
+**Example**  
+```js
+// returns 
+{
+  hash: "#2"
+  host: "www.baidu.com"
+  hostname: "www.baidu.com"
+  origin: "https://www.baidu.com"
+  pathname: "/abc/def"
+  port: ""
+  protocol: "https:"
+  query: {q: "1", a: "2"}
+  search: "?q=1&a=2"
+ }
+parseUrl('https://www.baidu.com/abc/def?q=1&a=2#2')
+```
+<a name="validateEmail"></a>
+
+## validateEmail ⇒ <code>boolean</code>
+校验邮箱
+[参考地址](https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript)
+
+**Kind**: global constant  
+**Returns**: <code>boolean</code> - 是否为邮箱  
+
+| Param | Type |
+| --- | --- |
+| email | <code>string</code> | 
+
+**Example**  
+```js
+// returns true
+validateEmail('xiaoguang_10@qq.com')
+```
+<a name="validMobile"></a>
+
+## validMobile ⇒ <code>boolean</code>
+校验手机号
+
+**Kind**: global constant  
+**Returns**: <code>boolean</code> - 是否为手机号  
+
+| Param | Type |
+| --- | --- |
+| phone | <code>string</code> | 
+
+**Example**  
+```js
+// returns true
+validMobile(13288888888)
+// returns false
+validMobile(13288888)
+```
+<a name="validChineseName"></a>
+
+## validChineseName ⇒ <code>boolean</code>
+校验中文名字
+
+**Kind**: global constant  
+**Returns**: <code>boolean</code> - 是否为手机号  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| name | <code>string</code> | 名字 |
+| length | <code>number</code> | 最大校验长度，默认16位 |
+
+**Example**  
+```js
+// returns true
+validChineseName('马云')
+```
+<a name="validPwd"></a>
+
+## validPwd ⇒ <code>boolean</code>
+密码复杂性 校验 6-18位，大小写字母、数字和符号 至少三种
+
+**Kind**: global constant  
+**Returns**: <code>boolean</code> - 是否通过校验  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| pwd | <code>string</code> | 密码 |
+
+**Example**  
+```js
+// returns true
+validPwd('qwe123.')
+```
+**Example**  
+```js
+// returns false
+validPwd('qwe123456')
+```
 <a name="debounce"></a>
 
 ## debounce(fn, wait, immediate)
@@ -399,114 +507,6 @@ object.addEventListener("scroll", fn);
 ```js
 // returns 123,456.23
 numWithCommas(123456.23)
-```
-<a name="getValueWithKey"></a>
-
-## getValueWithKey(data, keys) ⇒ <code>any</code>
-取值器 获取指定的key的值
-
-**Kind**: global function  
-**Returns**: <code>any</code> - 取值器得到的值  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| data | <code>object</code> | 对象 |
-| keys | <code>string</code> | b.c |
-
-**Example**  
-```js
-const a = {a:{ b: 1}}
-// returns 1
-getValueWithKey(a, 'a.b')
-// returns {b: 1}
-getValueWithKey(a, 'a')
-```
-<a name="parseUrl"></a>
-
-## parseUrl(url) ⇒ [<code>oParseUrl</code>](#oParseUrl)
-url 解析
-[参考地址](https://stackoverflow.com/questions/1420881/how-to-extract-base-url-from-a-string-in-javascript)
-
-**Kind**: global function  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| url | <code>string</code> | url 或者 fullpath |
-
-**Example**  
-```js
-// returns 
-{
-  hash: "#2"
-  host: "www.baidu.com"
-  hostname: "www.baidu.com"
-  origin: "https://www.baidu.com"
-  pathname: "/abc/def"
-  port: ""
-  protocol: "https:"
-  query: {q: "1", a: "2"}
-  search: "?q=1&a=2"
- }
-parseUrl('https://www.baidu.com/abc/def?q=1&a=2#2')
-```
-<a name="validMobile"></a>
-
-## validMobile(phone) ⇒ <code>boolean</code>
-校验手机号
-
-**Kind**: global function  
-**Returns**: <code>boolean</code> - 是否为手机号  
-
-| Param | Type |
-| --- | --- |
-| phone | <code>string</code> | 
-
-**Example**  
-```js
-// returns true
-validMobile(13288888888)
-// returns false
-validMobile(13288888)
-```
-<a name="validChineseName"></a>
-
-## validChineseName(name, length) ⇒ <code>boolean</code>
-校验中文名字
-
-**Kind**: global function  
-**Returns**: <code>boolean</code> - 是否为手机号  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| name | <code>string</code> | 名字 |
-| length | <code>number</code> | 最大校验长度，默认16位 |
-
-**Example**  
-```js
-// returns true
-validChineseName('马云')
-```
-<a name="validPwd"></a>
-
-## validPwd(pwd) ⇒ <code>boolean</code>
-密码复杂性 校验 6-18位，大小写字母、数字和符号 至少三种
-
-**Kind**: global function  
-**Returns**: <code>boolean</code> - 是否通过校验  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| pwd | <code>string</code> | 密码 |
-
-**Example**  
-```js
-// returns true
-validPwd('qwe123.')
-```
-**Example**  
-```js
-// returns false
-validPwd('qwe123456')
 ```
 <a name="oParseUrl"></a>
 

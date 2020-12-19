@@ -37,7 +37,7 @@ export const validateEmail = (email) => {
  * 
  * @returns {boolean} 是否为手机号
  */
-export function validMobile(phone) {
+export const validMobile = (phone) => {
   const patternMobile = /^1\d{10}$/
   return patternMobile.test(phone)
 }
@@ -54,7 +54,7 @@ export function validMobile(phone) {
  * 
  * @returns {boolean} 是否为手机号
  */
-export function validChineseName(name, length = 16) {
+export const validChineseName = (name, length = 16) => {
   return new RegExp(`^[\u4E00-\u9FA5]{2,${length}}$`).test(name)
 }
 
@@ -73,7 +73,7 @@ export function validChineseName(name, length = 16) {
  * 
  * @returns {boolean} 是否通过校验
  */
-export function validPwd(pwd) {
+export const validPwd = (pwd) => {
   const pwdReg = new RegExp(/^(?![a-zA-Z]+$)(?![A-Z0-9]+$)(?![A-Z\W_]+$)(?![a-z0-9]+$)(?![a-z\W_]+$)(?![0-9\W_]+$)[a-zA-Z0-9\W_]{6,18}$/);
   return pwdReg.test(pwd)
 }

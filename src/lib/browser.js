@@ -4,7 +4,7 @@
  * 
  * @namespace cookies
  */
-const cookies = {
+export const cookies = {
   /**
    * 获取cookie的某个值 
    * @memberof cookies
@@ -104,7 +104,7 @@ const cookies = {
  * 
  * @returns {number|string} ie版本信息 若不是ie，返回-1
  */
-function getIEVer() {
+export const getIEVer = () => {
   // 取得浏览器的userAgent字符串
   var userAgent = navigator.userAgent;
   // 判断是否IE<11浏览器
@@ -152,7 +152,7 @@ function getIEVer() {
  * 
  * @ignore
  */
-function getQueryString(name) {
+export const getQueryString = (name) => {
   var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
   var r = window.location.search.substr(1).match(reg);
   if (r != null) {
@@ -182,7 +182,7 @@ function getQueryString(name) {
  * 
  * @returns {string|null} 返回对应的key，若无返回null
  */
-export function getParameterByName(name, url = window.location.href) {
+export const getParameterByName = (name, url = window.location.href) => {
   name = name.replace(/[\[\]]/g, '\\$&');
   var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
     results = regex.exec(url);
@@ -190,9 +190,3 @@ export function getParameterByName(name, url = window.location.href) {
   if (!results[2]) return '';
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
-
-export {
-  getIEVer,
-  getQueryString,
-  cookies
-};
