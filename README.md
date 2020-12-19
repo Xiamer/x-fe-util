@@ -29,7 +29,7 @@
 <dt><a href="#getValueWithKey">getValueWithKey(data, keys)</a> ⇒ <code>any</code></dt>
 <dd><p>取值器 获取指定的key的值</p>
 </dd>
-<dt><a href="#parseUrl">parseUrl(url)</a> ⇒ <code>Object</code> | <code>boolean</code> | <code>boolean</code> | <code>Object</code> | <code>string</code> | <code>string</code></dt>
+<dt><a href="#parseUrl">parseUrl(url)</a> ⇒ <code>Object</code> | <code>String</code> | <code>String</code> | <code>String</code> | <code>String</code> | <code>String</code> | <code>String</code> | <code>Object</code> | <code>Object</code></dt>
 <dd><p>url 解析
 <a href="https://stackoverflow.com/questions/1420881/how-to-extract-base-url-from-a-string-in-javascript">参考地址</a></p>
 </dd>
@@ -184,12 +184,12 @@ getValueWithKey(a, 'a')
 ```
 <a name="parseUrl"></a>
 
-## parseUrl(url) ⇒ <code>Object</code> \| <code>boolean</code> \| <code>boolean</code> \| <code>Object</code> \| <code>string</code> \| <code>string</code>
+## parseUrl(url) ⇒ <code>Object</code> \| <code>String</code> \| <code>String</code> \| <code>String</code> \| <code>String</code> \| <code>String</code> \| <code>String</code> \| <code>Object</code> \| <code>Object</code>
 url 解析
 [参考地址](https://stackoverflow.com/questions/1420881/how-to-extract-base-url-from-a-string-in-javascript)
 
 **Kind**: global function  
-**Returns**: <code>Object</code> - connection The connection state.<code>boolean</code> - connection.isConnected Whether the authenticated user is currently connected.<code>boolean</code> - connection.isPending Whether the authenticated user's connection is currently pending.<code>Object</code> - connection.error The error object if an error occurred.<code>string</code> - connection.error.message The error message.<code>string</code> - connection.error.stack The stack trace of the error.  
+**Returns**: <code>Object</code> - oParseUrl<code>String</code> - oParseUrl.protocol protocol<code>String</code> - oParseUrl.host host<code>String</code> - oParseUrl.hostname hostname<code>String</code> - oParseUrl.origin origin<code>String</code> - oParseUrl.pathname pathname<code>String</code> - oParseUrl.port port<code>Object</code> - oParseUrl.search search<code>Object</code> - oParseUrl.query query  
 
 | Param | Type | Description |
 | --- | --- | --- |
