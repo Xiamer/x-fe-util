@@ -82,6 +82,8 @@ function throttle(fn, wait, options = {}) {
 
 /**
  * 千分位 
+ * {@link https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript 参考地址}.
+ * 
  * @example 
  * // returns 123,456.23
  * numWithCommas(123456.23) -> 123,456.23
@@ -89,7 +91,6 @@ function throttle(fn, wait, options = {}) {
  * @param {string | number} 数字
  * @returns {String} 千分位
  * 
- * @ignore https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
  */
 const numWithCommas = (x) => {
   if (x === '-') return '-'
@@ -100,12 +101,14 @@ const numWithCommas = (x) => {
 
 /**
  * 取值器 获取指定的key的值
+ * 
  * @example
  * const a = {a:{ b: 1}}
  * // returns 1
  * getValueWithKey(a, 'a.b')
  * // returns {b: 1}
  * getValueWithKey(a, 'a')
+ * 
  * @param {Object} data 对象
  * @param {String} keys b.c
  * @returns {any} 取值器得到的值
@@ -119,7 +122,9 @@ const getValueWithKey = (obj, keys) => {
 
 /**
  * url 解析
- * {@link https://stackoverflow.com/questions/1420881/how-to-extract-base-url-from-a-string-in-javascript 参考地址}.
+ * {@link https://stackoverflow.com/questions/1420881/how-to-extract-base-url-from-a-string-in-javascript 参考地址}
+ * 
+ * @example
  * // returns 
  * {
  *   hash: "#2"
@@ -135,7 +140,15 @@ const getValueWithKey = (obj, keys) => {
  * parseUrl('https://www.baidu.com/abc/def?q=1&a=2#2')
  * 
  * @param {String} url url 或者 fullpath
- * @returns {Object}
+ * @returns {Object} oParseUrl
+ * @returns {String} oParseUrl.protocol protocol
+ * @returns {String} oParseUrl.host host
+ * @returns {String} oParseUrl.hostname hostname
+ * @returns {String} oParseUrl.origin origin
+ * @returns {String} oParseUrl.pathname pathname
+ * @returns {String} oParseUrl.port port
+ * @returns {Object} oParseUrl.search search
+ * @returns {Object} oParseUrl.query query
  * 
  */
 const parseUrl = (url) => {

@@ -22,25 +22,16 @@
 用一句话总结防抖和节流的区别：防抖是将多次执行变为最后一次执行，节流是将多次执行变为每隔一段时间执行
 实现函数节流我们主要有两种方法：时间戳和定时器</p>
 </dd>
+<dt><a href="#numWithCommas">numWithCommas(数字)</a> ⇒ <code>String</code></dt>
+<dd><p>千分位 
+<a href="https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript">参考地址</a>.</p>
+</dd>
 <dt><a href="#getValueWithKey">getValueWithKey(data, keys)</a> ⇒ <code>any</code></dt>
 <dd><p>取值器 获取指定的key的值</p>
 </dd>
-<dt><a href="#parseUrl">parseUrl(url)</a> ⇒ <code>Object</code></dt>
+<dt><a href="#parseUrl">parseUrl(url)</a> ⇒ <code>Object</code> | <code>boolean</code> | <code>boolean</code> | <code>Object</code> | <code>string</code> | <code>string</code></dt>
 <dd><p>url 解析
-<a href="https://stackoverflow.com/questions/1420881/how-to-extract-base-url-from-a-string-in-javascript">参考地址</a>.
-// returns 
-{
-  hash: &quot;#2&quot;
-  host: &quot;<a href="http://www.baidu.com&quot;">www.baidu.com&quot;</a>
-  hostname: &quot;<a href="http://www.baidu.com&quot;">www.baidu.com&quot;</a>
-  origin: &quot;<a href="https://www.baidu.com&quot;">https://www.baidu.com&quot;</a>
-  pathname: &quot;/abc/def&quot;
-  port: &quot;&quot;
-  protocol: &quot;https:&quot;
-  query: {q: &quot;1&quot;, a: &quot;2&quot;}
-  search: &quot;?q=1&amp;a=2&quot;
- }
-parseUrl(&#39;<a href="https://www.baidu.com/abc/def?q=1&amp;a=2#2&#39;">https://www.baidu.com/abc/def?q=1&amp;a=2#2&#39;</a>)</p>
+<a href="https://stackoverflow.com/questions/1420881/how-to-extract-base-url-from-a-string-in-javascript">参考地址</a></p>
 </dd>
 </dl>
 
@@ -152,6 +143,24 @@ const fn = throttle(a, 2000)
 // 2s内只会执行一次
 object.addEventListener("scroll", fn);
 ```
+<a name="numWithCommas"></a>
+
+## numWithCommas(数字) ⇒ <code>String</code>
+千分位 
+[参考地址](https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript).
+
+**Kind**: global function  
+**Returns**: <code>String</code> - 千分位  
+
+| Param | Type |
+| --- | --- |
+| 数字 | <code>string</code> \| <code>number</code> | 
+
+**Example**  
+```js
+// returns 123,456.23
+numWithCommas(123456.23) -> 123,456.23
+```
 <a name="getValueWithKey"></a>
 
 ## getValueWithKey(data, keys) ⇒ <code>any</code>
@@ -175,9 +184,19 @@ getValueWithKey(a, 'a')
 ```
 <a name="parseUrl"></a>
 
-## parseUrl(url) ⇒ <code>Object</code>
+## parseUrl(url) ⇒ <code>Object</code> \| <code>boolean</code> \| <code>boolean</code> \| <code>Object</code> \| <code>string</code> \| <code>string</code>
 url 解析
-[参考地址](https://stackoverflow.com/questions/1420881/how-to-extract-base-url-from-a-string-in-javascript).
+[参考地址](https://stackoverflow.com/questions/1420881/how-to-extract-base-url-from-a-string-in-javascript)
+
+**Kind**: global function  
+**Returns**: <code>Object</code> - connection The connection state.<code>boolean</code> - connection.isConnected Whether the authenticated user is currently connected.<code>boolean</code> - connection.isPending Whether the authenticated user's connection is currently pending.<code>Object</code> - connection.error The error object if an error occurred.<code>string</code> - connection.error.message The error message.<code>string</code> - connection.error.stack The stack trace of the error.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| url | <code>String</code> | url 或者 fullpath |
+
+**Example**  
+```js
 // returns 
 {
   hash: "#2"
@@ -191,12 +210,4 @@ url 解析
   search: "?q=1&a=2"
  }
 parseUrl('https://www.baidu.com/abc/def?q=1&a=2#2')
-
-**Kind**: global function  
-**Returns**: <code>Object</code> - See [MyClass](MyClass) and [MyClass's foo property](MyClass#foo).  
-**Read only**: true  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| url | <code>String</code> | url 或者 fullpath |
-
+```
