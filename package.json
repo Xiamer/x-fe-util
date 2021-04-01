@@ -1,6 +1,6 @@
 {
   "name": "x-fe-util",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "fe util",
   "main": "./dist/index.min.js",
   "directories": {
@@ -9,7 +9,7 @@
   "scripts": {
     "bulid": "webpack --config ./bulid/webpack.prod.conf.js",
     "dev": "webpack serve --config ./bulid/webpack.dev.conf.js",
-    "docs": "node ./bulid/docs.js",
+    "docs": "node ./bulid/gen-docs.js && node ./bulid/docs.js",
     "docs2": "jsdoc2md src/lib/design.js > api.md"
   },
   "author": "xiamer",

@@ -1,3 +1,22 @@
+# fe-util
+
+前端常用的工具类库函数
+
+# 安装与使用
+
+```bash
+npm install --x-fe-util --save
+```
+
+```js
+import { getParameterByName } from 'x-fe-util'
+
+const queryStr = '?foo=lorem&bar=&baz'
+// returns  lorem
+getParameterByName('foo', queryStr); // "lorem"
+```
+
+# 文档
 ## Classes
 
 <dl>
@@ -477,9 +496,9 @@ validPwd('qwe123456')
 
 **Example**  
 ```js
-// {gender: "M", birthday: "2002-01-01", age: 18}
+// returns {gender: "M", birthday: "2002-01-01", age: 18}
 getIdCardInfo('12010420020101253x')
-// {}
+// returns {}
 getIdCardInfo('000')
 ```
 <a name="debounce"></a>
