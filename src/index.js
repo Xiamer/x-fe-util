@@ -2,20 +2,15 @@
  * @Author: xiaoguang_10@qq.com
  * @LastEditors: xiaoguang_10@qq.com
  * @Date: 2020-12-16 17:19:15
- * @LastEditTime: 2021-04-01 20:10:46
+ * @LastEditTime: 2021-04-01 20:22:05
  */
 
-import * as browser from './lib/browser'; // 浏览器相关
-import * as dom from './lib/dom'; // dom相关
-import * as design from './lib/design'; // 设计模式相关
-import * as pure from './lib/pure'; // 纯函数
-import * as idCard from './lib/id-card' // 身份证
+export * from './lib/browser'; // 浏览器相关
+export * from './lib/dom'; // dom相关
+export * from './lib/design'; // 设计模式相关
+export * from './lib/pure'; // 纯函数
+export * from './lib/id-card' // 身份证
 
-export default {
-  ...browser,
-  ...dom,
-  ...design,
-  ...pure,
-  ...idCard
-}
+
+
 
