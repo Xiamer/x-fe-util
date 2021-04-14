@@ -5,7 +5,7 @@
 # 安装与使用
 
 ```bash
-npm install --x-fe-util --save
+npm install x-fe-util --save
 ```
 
 ```js
